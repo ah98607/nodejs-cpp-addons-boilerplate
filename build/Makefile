@@ -321,12 +321,12 @@ $(obj).$(TOOLSET)/%.o: $(obj)/%.s FORCE_DO_CMD
 
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,hello.target.mk)))),)
-  include hello.target.mk
+                 $(join ^,pow.target.mk)))),)
+  include pow.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
-cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/andyhe/CSProjects/nodejs-cpp-addons-boilerplate/build/config.gypi -I/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/Users/andyhe/.node-gyp/10.7.0/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/andyhe/.node-gyp/10.7.0" "-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/Users/andyhe/.node-gyp/10.7.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/andyhe/CSProjects/nodejs-cpp-addons-boilerplate" "-Dnode_engine=v8" binding.gyp
+cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/andyhe/CSProjects/nodejs-cpp-binding-boilerplate/build/config.gypi -I/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/Users/andyhe/.node-gyp/10.7.0/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/andyhe/.node-gyp/10.7.0" "-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/Users/andyhe/.node-gyp/10.7.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/andyhe/CSProjects/nodejs-cpp-binding-boilerplate" "-Dnode_engine=v8" binding.gyp
 Makefile: $(srcdir)/../../.node-gyp/10.7.0/include/node/common.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp $(srcdir)/../../../../usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi
 	$(call do_cmd,regen_makefile)
 
