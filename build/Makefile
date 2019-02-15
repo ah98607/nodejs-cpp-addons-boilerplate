@@ -321,8 +321,8 @@ $(obj).$(TOOLSET)/%.o: $(obj)/%.s FORCE_DO_CMD
 
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,pow.target.mk)))),)
-  include pow.target.mk
+                 $(join ^,product.target.mk)))),)
+  include product.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@

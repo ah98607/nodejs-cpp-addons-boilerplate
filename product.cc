@@ -1,7 +1,7 @@
 #include <nan.h>
 #include <math.h>
 
-void powIntf(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+void productIntf(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
   // validate input data size and type
   if (info.Length() < 2) {
@@ -16,12 +16,15 @@ void powIntf(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   // reading args
   double arg0 = info[0]->NumberValue();
   double arg1 = info[1]->NumberValue();
+  double arg2 = info[2]->NumberValue();
 
   // invoke c++ function
-  double rawRetVal = pow(arg0, arg1);
+  for (int i = 0; i < arg2; i++) {
+    double product = arg0 * arg1;
+  }
 
   // prepare return value
-  v8::Local<v8::Number> retVal = Nan::New(rawRetVal);
+  v8::Local<v8::Number> retVal = Nan::New(0); // ignore the output
 
   //altering object reference "info"
   info.GetReturnValue().Set(retVal);
@@ -29,8 +32,8 @@ void powIntf(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
 void Init(v8::Local<v8::Object> exports) {
   exports->Set(
-    Nan::New("pow").ToLocalChecked(),
-    Nan::New<v8::FunctionTemplate>(powIntf)->GetFunction());
+    Nan::New("product").ToLocalChecked(),
+    Nan::New<v8::FunctionTemplate>(productIntf)->GetFunction());
 }
 
-NODE_MODULE(hello, Init)
+NODE_MODULE(product, Init)

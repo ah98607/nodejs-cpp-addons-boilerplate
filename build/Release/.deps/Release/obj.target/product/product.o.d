@@ -1,5 +1,6 @@
-cmd_Release/obj.target/pow/pow.o := c++ '-DNODE_GYP_MODULE_NAME=pow' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_DARWIN_USE_64_BIT_INODE=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/Users/andyhe/.node-gyp/10.7.0/include/node -I/Users/andyhe/.node-gyp/10.7.0/src -I/Users/andyhe/.node-gyp/10.7.0/deps/openssl/config -I/Users/andyhe/.node-gyp/10.7.0/deps/openssl/openssl/include -I/Users/andyhe/.node-gyp/10.7.0/deps/uv/include -I/Users/andyhe/.node-gyp/10.7.0/deps/zlib -I/Users/andyhe/.node-gyp/10.7.0/deps/v8/include -I../node_modules/nan  -Os -gdwarf-2 -mmacosx-version-min=10.7 -arch x86_64 -Wall -Wendif-labels -W -Wno-unused-parameter -std=gnu++1y -stdlib=libc++ -fno-rtti -fno-exceptions -fno-threadsafe-statics -fno-strict-aliasing -MMD -MF ./Release/.deps/Release/obj.target/pow/pow.o.d.raw   -c -o Release/obj.target/pow/pow.o ../pow.cc
-Release/obj.target/pow/pow.o: ../pow.cc ../node_modules/nan/nan.h \
+cmd_Release/obj.target/product/product.o := c++ '-DNODE_GYP_MODULE_NAME=product' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_DARWIN_USE_64_BIT_INODE=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/Users/andyhe/.node-gyp/10.7.0/include/node -I/Users/andyhe/.node-gyp/10.7.0/src -I/Users/andyhe/.node-gyp/10.7.0/deps/openssl/config -I/Users/andyhe/.node-gyp/10.7.0/deps/openssl/openssl/include -I/Users/andyhe/.node-gyp/10.7.0/deps/uv/include -I/Users/andyhe/.node-gyp/10.7.0/deps/zlib -I/Users/andyhe/.node-gyp/10.7.0/deps/v8/include -I../node_modules/nan  -Os -gdwarf-2 -mmacosx-version-min=10.7 -arch x86_64 -Wall -Wendif-labels -W -Wno-unused-parameter -std=gnu++1y -stdlib=libc++ -fno-rtti -fno-exceptions -fno-threadsafe-statics -fno-strict-aliasing -MMD -MF ./Release/.deps/Release/obj.target/product/product.o.d.raw   -c -o Release/obj.target/product/product.o ../product.cc
+Release/obj.target/product/product.o: ../product.cc \
+  ../node_modules/nan/nan.h \
   /Users/andyhe/.node-gyp/10.7.0/include/node/node_version.h \
   /Users/andyhe/.node-gyp/10.7.0/include/node/uv.h \
   /Users/andyhe/.node-gyp/10.7.0/include/node/uv/errno.h \
@@ -27,7 +28,7 @@ Release/obj.target/pow/pow.o: ../pow.cc ../node_modules/nan/nan.h \
   ../node_modules/nan/nan_private.h \
   ../node_modules/nan/nan_typedarray_contents.h \
   ../node_modules/nan/nan_json.h
-../pow.cc:
+../product.cc:
 ../node_modules/nan/nan.h:
 /Users/andyhe/.node-gyp/10.7.0/include/node/node_version.h:
 /Users/andyhe/.node-gyp/10.7.0/include/node/uv.h:
